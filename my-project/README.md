@@ -6,6 +6,18 @@ One Paragraph of project description goes here
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+## Swagger init
+
+after add above func
+
+// @Summary Get a Page Activity
+// @Description Get a Page Activity
+// @Produce json
+// @Success 200 {object} map[string]string
+// @Router /activity/page [get]
+
+please run : swag init -g .\cmd\api\main.go
+
 ## MakeFile
 
 Run build make command with tests
