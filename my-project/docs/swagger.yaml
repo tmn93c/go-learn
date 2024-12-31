@@ -1,0 +1,30 @@
+info:
+  contact: {}
+paths:
+  /:
+    get:
+      description: Get a hello word message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get a hello word
+  /activity/page:
+    get:
+      description: Get a Page Activity
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get a Page Activity
+swagger: "2.0"
