@@ -1,0 +1,85 @@
+definitions:
+  controllers.LoginRequest:
+    properties:
+      email:
+        example: john@doe.com
+        type: string
+      password:
+        example: "123456"
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Login User
+      parameters:
+      - description: User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Login
+      tags:
+      - user
+  /refresh-token:
+    post:
+      consumes:
+      - application/json
+      description: Refresh token
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Refresh token
+      tags:
+      - user
+  /signup:
+    post:
+      description: Sign Up User
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Sign Up
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: get user list
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: get user list
+      tags:
+      - user
+swagger: "2.0"
